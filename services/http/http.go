@@ -668,11 +668,9 @@ func (s *HTTP) GetDirectConn(address string, localAddr string) (conn net.Conn, e
 		return utils.ConnectHost(address, *s.cfg.Timeout)
 	}
 	ip, _, _ := net.SplitHostPort(localAddr)
-
-	//if utils.IsInternalIP(ip, false) {
-	//return utils.ConnectHost(address, *s.cfg.Timeout)
-	//}
-	// 可指定网卡
+	if utils.IsInternalIP(ip, false) {
+		return utils.ConnectHost(address, *s.cfg.Timeout)
+	}
 	local, _ := net.ResolveTCPAddr("tcp", ip+":0")
 	d := net.Dialer{
 		Timeout:   time.Millisecond * time.Duration(*s.cfg.Timeout),

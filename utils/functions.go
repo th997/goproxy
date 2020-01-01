@@ -31,7 +31,7 @@ import (
 
 	"time"
 
-	"github.com/snail007/goproxy/utils/id"
+	xid "github.com/snail007/goproxy/utils/id"
 
 	kcp "github.com/xtaci/kcp-go"
 )
@@ -671,16 +671,16 @@ func IsInternalIP(domainOrIP string, always bool) bool {
 		if ip.IsLoopback() {
 			return true
 		}
-		if ip.To4().Mask(net.IPv4Mask(255, 0, 0, 0)).String() == "10.0.0.0" {
-			return true
-		}
-		if ip.To4().Mask(net.IPv4Mask(255, 255, 0, 0)).String() == "192.168.0.0" {
-			return true
-		}
-		if ip.To4().Mask(net.IPv4Mask(255, 0, 0, 0)).String() == "172.0.0.0" {
-			i, _ := strconv.Atoi(strings.Split(ip.To4().String(), ".")[1])
-			return i >= 16 && i <= 31
-		}
+		// if ip.To4().Mask(net.IPv4Mask(255, 0, 0, 0)).String() == "10.0.0.0" {
+		// 	return true
+		// }
+		// if ip.To4().Mask(net.IPv4Mask(255, 255, 0, 0)).String() == "192.168.0.0" {
+		// 	return true
+		// }
+		// if ip.To4().Mask(net.IPv4Mask(255, 0, 0, 0)).String() == "172.0.0.0" {
+		// 	i, _ := strconv.Atoi(strings.Split(ip.To4().String(), ".")[1])
+		// 	return i >= 16 && i <= 31
+		// }
 	}
 	return false
 }
