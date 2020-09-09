@@ -19,7 +19,7 @@ require (
 	github.com/tjfoc/gmsm v1.3.2 // indirect
 	github.com/xtaci/kcp-go v2.0.4-0.20180203133237-42bc1dfefff5+incompatible
 	golang.org/x/crypto v0.0.0-20191219195013-becbf705a915
-	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
+	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b
 	golang.org/x/sys v0.0.0-20190412213103-97732733099d
 	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
